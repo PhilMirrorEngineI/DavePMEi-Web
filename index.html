@@ -1,74 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>DavePMEi Memory Interface</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; background: #0d0d0d; color: #f2f2f2; }
-    h1 { color: #00ffcc; }
-    input, textarea, button { margin: 5px 0; padding: 8px; width: 100%; }
-    button { background: #00ffcc; border: none; cursor: pointer; font-weight: bold; }
-    pre { background: #1a1a1a; padding: 10px; border-radius: 4px; overflow-x: auto; }
-  </style>
-</head>
-<body>
-  <h1>Dave powered by PMEi 🪞</h1>
+// Save Memory
+const res = await fetch("/api/save_memory", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(body)
+});
 
-  <h2>Save Memory</h2>
-  <form id="saveForm">
-    <input type="text" id="user_id" placeholder="User ID" required />
-    <input type="text" id="thread_id" placeholder="Thread ID" required />
-    <input type="text" id="slide_id" placeholder="Slide ID" required />
-    <input type="text" id="glyph_echo" placeholder="Glyph Echo" required />
-    <input type="text" id="drift_score" placeholder="Drift Score (0.0)" value="0.0" required />
-    <input type="text" id="seal" placeholder="Seal" required />
-    <textarea id="content" placeholder="Content..." required></textarea>
-    <button type="submit">Save Memory</button>
-  </form>
-
-  <h2>Retrieve Memory</h2>
-  <button id="getMemory">Get Last 5 Memories</button>
-
-  <h2>Response</h2>
-  <pre id="responseBox">Waiting...</pre>
-
-  <script>
-    const API_BASE = "https://philmirrorenginei.ai";
-    const API_KEY = "<YOUR_API_KEY>"; // ⚠️ replace with your key or set as env var in Vercel
-
-    // Save Memory
-    document.getElementById("saveForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const body = {
-        user_id: document.getElementById("user_id").value,
-        thread_id: document.getElementById("thread_id").value,
-        slide_id: document.getElementById("slide_id").value,
-        glyph_echo: document.getElementById("glyph_echo").value,
-        drift_score: parseFloat(document.getElementById("drift_score").value),
-        seal: document.getElementById("seal").value,
-        content: document.getElementById("content").value
-      };
-
-      const res = await fetch(`${API_BASE}/save_memory`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "X-API-KEY": API_KEY
-        },
-        body: JSON.stringify(body)
-      });
-      const data = await res.json();
-      document.getElementById("responseBox").textContent = JSON.stringify(data, null, 2);
-    });
-
-    // Get Memory
-    document.getElementById("getMemory").addEventListener("click", async () => {
-      const res = await fetch(`${API_BASE}/get_memory?limit=5`, {
-        headers: { "X-API-KEY": API_KEY }
-      });
-      const data = await res.json();
-      document.getElementById("responseBox").textContent = JSON.stringify(data, null, 2);
-    });
-  </script>
-</body>
-</html>
+// Get Memory
+const res = await fetch("/api/get_memory");
