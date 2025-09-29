@@ -4,16 +4,19 @@ export default async function handler(req, res) {
   }
 
   try {
-    const response = await fetch(`${process.env.PMEI_API_BASE}/latest_memory`, {
-      method: "GET",
+    const response = await fetch(`${process.env.PMEI_API_BASE}/memory_manager`, {
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
         "X-API-KEY": process.env.API_KEY,
       },
+      body: JSON.stringify({
+        no_save: true,
+        filters: { limit: 1 }
+      }),
     });
 
     const data = await response.json();
-
     if (!response.ok) {
       return res.status(response.status).json(data);
     }
