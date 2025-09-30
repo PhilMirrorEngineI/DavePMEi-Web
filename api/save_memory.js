@@ -4,18 +4,15 @@ export default async function handler(req, res) {
   }
 
   try {
-    const body = typeof req.body === "string" ? JSON.parse(req.body) : req.body;
+    const body = req.body;
 
-    const response = await fetch(`${process.env.PMEI_API_BASE}/memory_manager`, {
+    const response = await fetch(`${process.env.PMEI_API_BASE}/save_memory`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "X-API-KEY": process.env.API_KEY,
       },
-      body: JSON.stringify({
-        no_save: false,
-        save: body, // passes through your memory object (user_id, thread_id, etc.)
-      }),
+      body: JSON.stringify(body),
     });
 
     const data = await response.json();
@@ -23,8 +20,8 @@ export default async function handler(req, res) {
       return res.status(response.status).json(data);
     }
 
-    res.status(200).json(data);
+    return res.status(200).json(data);
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    return res.status(500).json({ error: err.message });
   }
 }
