@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 
 export async function POST() {
   try {
-    // Hit Vercel Deploy Hook (you’ll need to create this in Vercel dashboard)
     const res = await fetch(process.env.VERCEL_DEPLOY_HOOK_URL as string, {
       method: "POST",
     });
