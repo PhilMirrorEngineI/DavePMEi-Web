@@ -1,49 +1,16 @@
-"use client"
-import { useState } from "react"
+"use client";
 
 export default function DonateButton() {
-  const [loading, setLoading] = useState(false)
-
-  const handleDonate = async () => {
-    setLoading(true)
-    try {
-      const res = await fetch("/api/checkout_sessions", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount: 500 }), // £5
-      })
-
-      const { url } = await res.json()
-
-      if (url) {
-        // Open Stripe in modal-like overlay
-        const stripeWindow = window.open(url, "stripe-checkout", "width=500,height=700")
-        if (!stripeWindow) {
-          window.location.href = url // fallback
-        }
-      }
-    } catch (err) {
-      console.error("Donation failed:", err)
-    }
-    setLoading(false)
-  }
+  // Replace this with your live Stripe link
+  const stripeUrl = "https://donate.stripe.com/dRmeVf5327e24Ml1XL87K01";
 
   return (
     <button
-      onClick={handleDonate}
-      disabled={loading}
-      style={{
-        backgroundColor: "#000000",
-        color: "#ffdf00",
-        border: "1px solid #ffdf00",
-        borderRadius: "6px",
-        padding: "0.75rem 1.5rem",
-        fontWeight: "bold",
-        cursor: "pointer",
-        transition: "all 0.3s ease",
-      }}
+      onClick={() => window.open(stripeUrl, "_blank")}
+      className="px-6 py-3 bg-yellow-500 text-black font-bold rounded-lg shadow-lg 
+                 hover:bg-yellow-400 transition duration-200 ease-in-out"
     >
-      {loading ? "Processing…" : "Donate £5"}
+      Donate £5
     </button>
-  )
+  );
 }
