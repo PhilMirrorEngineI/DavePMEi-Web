@@ -1,4 +1,4 @@
-import DonateButton from "/components/DonateButton";
+import DonateButton from "./components/DonateButton";
 
 export default function HomePage() {
   return (
