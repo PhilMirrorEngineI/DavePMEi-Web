@@ -1,0 +1,77 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #fff;
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+/* Navbar/Header */
+header, nav {
+  background-color: #000;
+  color: #fff;
+  border-bottom: 1px solid #333;
+  padding: 1rem;
+}
+
+/* Links */
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #FFD700; /* gold */
+}
+
+/* Buttons */
+button {
+  background-color: #000;
+  border: 2px solid #FFD700;
+  color: #FFD700;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #FFD700;
+  color: #000;
+}
+
+/* Sections */
+section {
+  background-color: #111;
+  color: #fff;
+  padding: 2rem;
+}
+
+/* Feature + Chat boxes */
+.feature-box,
+.chat-box {
+  background-color: #000;
+  border: 2px solid #FFD700;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/* Keep images full color */
+.feature-box img,
+.chat-box img {
+  filter: none;
+}
+
+/* Footer */
+footer {
+  background-color: #000;
+  color: #fff;
+  border-top: 1px solid #333;
+  padding: 1rem;
+  text-align: center;
+}
