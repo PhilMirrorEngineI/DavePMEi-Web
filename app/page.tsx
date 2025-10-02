@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import Button from "./component/ui/button";
-import Card from "./component/ui/card";
-import DaveChat from "./component/dave-chat";
-import DonateSection from "./component/donatesection";
+import Button from "./components/ui/button";
+import Card from "./components/ui/card";
+import DaveChat from "./components/dave-chat";
+import DonateSection from "./components/donatesection";
 
 export default function HomePage() {
   const [showLoginModal, setShowLoginModal] = useState(false);
