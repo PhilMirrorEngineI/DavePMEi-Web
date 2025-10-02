@@ -1,16 +1,13 @@
-"use client";
+"use client"
 
-export default function DonateButton() {
-  // Replace this with your live Stripe link
-  const stripeUrl = "https://donate.stripe.com/dRmeVf5327e24Ml1XL87K01";
+import { Button } from "./ui/Button"
 
+export function DonateSection() {
   return (
-    <button
-      onClick={() => window.open(stripeUrl, "_blank")}
-      className="px-6 py-3 bg-yellow-500 text-black font-bold rounded-lg shadow-lg 
-                 hover:bg-yellow-400 transition duration-200 ease-in-out"
-    >
-      Donate £5
-    </button>
-  );
+    <div className="text-center mt-6">
+      <Button onClick={() => alert("Redirect to donations page")}>
+        Donate £5
+      </Button>
+    </div>
+  )
 }
