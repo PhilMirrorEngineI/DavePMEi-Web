@@ -1,13 +1,17 @@
 "use client";
 
-import Button from "./ui/button";
+import React from "react";
 
-export default function DonateSection() {
+export default function Button({
+  children,
+  ...props
+}: React.ButtonHTMLAttributes<HTMLButtonElement>) {
   return (
-    <div className="text-center mt-6">
-      <Button onClick={() => alert("Redirect to donations page")}>
-        Donate £5
-      </Button>
-    </div>
+    <button
+      className="px-4 py-2 rounded bg-yellow-500 hover:bg-yellow-600 text-black font-bold"
+      {...props}
+    >
+      {children}
+    </button>
   );
 }
