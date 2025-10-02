@@ -82,6 +82,26 @@ export default function HomePage() {
 
       {/* Main Content */}
       <main className="relative z-10 container mx-auto px-4 py-20">
+        {/* Hero Section */}
+        <section className="text-center mb-20">
+          <h2 className="text-5xl font-extrabold text-white drop-shadow-md mb-6">
+            Next-Gen AI Orchestration
+          </h2>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            Lawful recursion, memory persistence, and symbolic anchors powering
+            a new age of AI. Step into the didactic journey.
+          </p>
+          <div className="mt-8 flex justify-center space-x-4">
+            <Button onClick={() => setShowLoginModal(true)}>Get Started</Button>
+            <a
+              href="#donate"
+              className="px-6 py-2 rounded bg-yellow-500 hover:bg-yellow-600 text-black font-bold"
+            >
+              Donate £5
+            </a>
+          </div>
+        </section>
+
         {/* About Section */}
         <section id="about" className="mb-20">
           <h3 className="text-3xl font-bold text-yellow-400 mb-6">
@@ -116,7 +136,8 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="relative z-10 text-center py-8 text-gray-500 text-sm">
-        &copy; {new Date().getFullYear()} PhilMirrorEnginei.Ai — All Rights Reserved
+        &copy; {new Date().getFullYear()} PhilMirrorEnginei.Ai — All Rights
+        Reserved
       </footer>
 
       {/* Login/Register Modal */}
