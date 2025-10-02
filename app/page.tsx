@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "./components/ui/Button";
 import { Card } from "./components/ui/Card";
-import Dave-Chat from "./components/dave-chat";
+import DaveChat from "./components/dave-chat";
 import DonateSection from "./components/donatesection";
 
 export default function HomePage() {
