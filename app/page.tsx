@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Button from "./component/ui/button";
 import Card from "./component/ui/card";
-import DaveChat from "./component/davechat";
+import DaveChat from "./component/dave-chat";
 import DonateSection from "./component/donatesection";
 
 export default function HomePage() {
@@ -82,6 +82,7 @@ export default function HomePage() {
 
       {/* Main Content */}
       <main className="relative z-10 container mx-auto px-4 py-20">
+        {/* Hero Section */}
         <section className="text-center mb-20">
           <h2 className="text-5xl font-extrabold text-white drop-shadow-md mb-6">
             Next-Gen AI Orchestration
