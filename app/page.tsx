@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { Button } from "./components/ui/Button";
 import { Card } from "./components/ui/Card";
-import dave-chat from "./components/Dave-chat";
-import DonateSection from "./components/DonateSection";
+import dave-chat from "./components/dave-chat";
+import donatesection from "./components/donatesection";
 
 export default function HomePage() {
   const [showLoginModal, setShowLoginModal] = useState(false);
