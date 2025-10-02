@@ -1263,6 +1263,7 @@ export default function HomePage() {
         You can support development directly via our donation portal.
       </p>
 
+      
       {/* Donate Button */}
       <DonateButton />
 
