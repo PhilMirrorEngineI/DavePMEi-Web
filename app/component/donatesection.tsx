@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "./ui/Button";
+import { Button } from "./ui/utton";
 
 export function ButtonSection() {
   return (
