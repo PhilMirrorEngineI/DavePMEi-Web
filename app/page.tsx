@@ -5,7 +5,6 @@ import Button from "./component/ui/button";
 import Card from "./component/ui/card";
 import DaveChat from "./component/dave-chat";
 import DonateSection from "./component/donatesection";
-
 export default function HomePage() {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [authMode, setAuthMode] = useState<"Login" | "Register">("Login");
