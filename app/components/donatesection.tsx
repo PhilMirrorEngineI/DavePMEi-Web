@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "./ui/Button";
+import { button } from "./ui/Button";
 
 export function donatesection() {
   return (
